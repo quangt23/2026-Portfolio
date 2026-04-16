@@ -1,5 +1,6 @@
 import { PROJECTS } from "../data/projects";
 import LocationCard from "../components/LocationCard";
+import DashboardPanels from "../components/DashboardPanels";
 
 export default function HomePage({ setPage }) {
   return (
@@ -91,6 +92,7 @@ export default function HomePage({ setPage }) {
         </div>
         <LocationCard />
       </div>
+      <DashboardPanels />
     </div>
   );
 }

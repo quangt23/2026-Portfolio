@@ -1,6 +1,9 @@
 import { PROJECTS } from "../data/projects";
 import LocationCard from "../components/LocationCard";
 import DashboardPanels from "../components/DashboardPanels";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import coxLogo from "../assets/cox_logo.png";
+import schneiderLogo from "../assets/schneider_logo.png";
 
 export default function HomePage({ setPage }) {
   return (
@@ -8,10 +11,10 @@ export default function HomePage({ setPage }) {
       <div className="home-intro fade-in">
         <p className="eyebrow">open to work</p>
         <h1 className="home-name">
-          Hey, I'm <em>Quang Tran</em>.<br />I like to build things.
+          Hey! I'm <em>Quang Tran</em><br />
         </h1>
         <p className="home-bio">
-          Software engineer focused on full-stack systems and machine learning.
+          Software engineer focused on building reliable systems and scalable applications.
           Recent CS grad from{" "}
           <a href="https://www.uml.edu/about/" target="_blank" rel="noreferrer">
             UMass Lowell
@@ -25,15 +28,21 @@ export default function HomePage({ setPage }) {
 
         <div className="socials">
           <a className="social-link" href="https://github.com/quangt23" target="_blank" rel="noreferrer">
-            GitHub <span className="arrow">↗</span>
+            <FaGithub className="social-icon" />
+              GitHub
+            <span className="arrow">↗</span>
           </a>
           <span className="social-sep">/</span>
           <a className="social-link" href="https://www.linkedin.com/in/quang-tran-uml/" target="_blank" rel="noreferrer">
-            LinkedIn <span className="arrow">↗</span>
+            <FaLinkedin className="social-icon" />
+              LinkedIn
+            <span className="arrow">↗</span>
           </a>
           <span className="social-sep">/</span>
           <a className="social-link" href="mailto:your@email.com">
-            Email <span className="arrow">↗</span>
+            <FaEnvelope className="social-icon" />
+              E-mail
+            <span className="arrow">↗</span>
           </a>
         </div>
 
@@ -41,12 +50,15 @@ export default function HomePage({ setPage }) {
           <span className="employer-label">currently</span>
           <span className="employer-name current">open to work</span>
           <span className="employer-slash">/</span>
-          <span className="employer-label">prev</span>
           <a href="https://www.se.com/ww/en/" className="employer-name" target="_blank" rel="noreferrer">
-            Schneider Electric
+            <img src={schneiderLogo} alt="Schneider Electric" className="employer-logo-schneider" />
+              Schneider Electric <em>(past)</em>
           </a>
           <span className="employer-slash">/</span>
-          <span className="employer-name">Cox Engineering</span>
+          <a href="https://www.coxengineering.com/who-we-are/" className="employer-name" target="_blank" rel="noreferrer">
+            <img src={coxLogo} alt="Cox Engineering" className="employer-logo-cox" />
+              Cox Engineering <em>(past)</em>
+          </a>
         </div>
       </div>
 
@@ -92,7 +104,6 @@ export default function HomePage({ setPage }) {
         </div>
         <LocationCard />
       </div>
-      <DashboardPanels />
     </div>
   );
 }

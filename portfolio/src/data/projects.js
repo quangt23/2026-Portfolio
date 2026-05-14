@@ -1,3 +1,6 @@
+import languageClusteringImg from "../assets/languageClusteringImg.png"
+import crateMasterImg from "../assets/crateMasterImg.png"
+
 export const PROJECTS = [
   {
     id: 1,
@@ -5,15 +8,17 @@ export const PROJECTS = [
     desc: "Tested whether multilingual sentence embedding models capture language family relationships. Used agglomerative clustering and dendrogram analysis on 20+ languages.",
     tags: ["Python", "ML", "pandas", "numpy"],
     cat: "machine learning",
+    image: languageClusteringImg,
     link: "github.com/tristanmcd130/hlcuse",
   },
   {
     id: 2,
-    title: "Classifying Financial News",
-    desc: "Support vector machine classifier for financial headline sentiment. Achieved 85%+ accuracy across three sentiment classes.",
-    tags: ["Python", "SVM", "pandas", "scikit-learn"],
-    cat: "machine learning",
-    link: "github.com/tmcdermott02012319/financial-svm",
+    title: "Crate Master",
+    desc: "Sokoban-style warehouse puzzle game. Push crates to designated positions across increasingly complex levels.",
+    tags: ["C++", "SFML"],
+    cat: "app",
+    image: crateMasterImg,
+    link: "github.com/quangt23/Crate-Master",
   },
   {
     id: 3,
@@ -33,11 +38,11 @@ export const PROJECTS = [
   },
   {
     id: 5,
-    title: "Crate Master",
-    desc: "Sokoban-style warehouse puzzle game. Push crates to designated positions across increasingly complex levels.",
-    tags: ["C++", "SFML"],
-    cat: "app",
-    link: "github.com/quangt23/Crate-Master",
+    title: "Classifying Financial News",
+    desc: "Support vector machine classifier for financial headline sentiment. Achieved 85%+ accuracy across three sentiment classes.",
+    tags: ["Python", "SVM", "pandas", "scikit-learn"],
+    cat: "machine learning",
+    link: "github.com/tmcdermott02012319/financial-svm",
   },
   {
     id: 6,

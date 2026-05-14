@@ -1,7 +1,7 @@
 import { PROJECTS } from "../data/projects";
 import LocationCard from "../components/LocationCard";
 import DashboardPanels from "../components/DashboardPanels";
-import { FaGithub, FaLinkedin, FaEnvelope, FaStar, FaStarHalf, FaStarOfLife } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaStar, FaStarHalf, FaStarOfLife, FaTag, FaTags, FaRegCalendarAlt, FaArrowRight } from "react-icons/fa";
 import coxLogo from "../assets/cox_logo.png";
 import schneiderLogo from "../assets/schneider_logo.png";
 
@@ -9,7 +9,7 @@ export default function HomePage({ setPage }) {
   return (
     <div className="page">
       <div className="home-intro fade-in">
-        <p className="eyebrow">V.10</p>
+        <p className="eyebrow">V.20</p>
         <h1 className="home-name">
           Hey! I'm <em>Quang Tran</em><br />
         </h1>
@@ -71,40 +71,71 @@ export default function HomePage({ setPage }) {
           view all →
         </a>
       </div>
-      <div className="proj-list">
-        {PROJECTS.slice(0, 3).map(p => (
+      <div className="project-grid">
+        {PROJECTS.slice(0, 2).map((p) => (
           <a
             key={p.id}
-            className="proj-row"
+            className="project-card"
             href={"https://" + p.link}
             target="_blank"
             rel="noreferrer"
           >
-            <div>
-              <div className="proj-row-title">{p.title}</div>
-              <div className="proj-row-desc">{p.desc}</div>
-              <div className="proj-row-tags">
-                {p.tags.map(t => (
-                  <span key={t} className="proj-tag">{t}</span>
+            <div className="project-image-wrap">
+              <img
+                src={p.image}
+                alt={p.title}
+                className="project-image"
+              />
+            </div>
+
+            <div className="project-content">
+              <div className="project-top">
+                <h3>{p.title}</h3>
+                <span className="proj-row-arrow">↗</span>
+              </div>
+
+              <p className="project-desc">{p.desc}</p>
+              <div className="project-tags">
+                <FaTags className="project-tags-icon" />
+                {p.tags.map((t, i) => (
+                  <span
+                    key={t}
+                    className={`project-tag tag-color-${Math.floor(Math.random() * 6)}`}
+                  >
+                    {t}
+                  </span>
                 ))}
               </div>
             </div>
-            <span className="proj-row-arrow">↗</span>
           </a>
         ))}
       </div>
 
-      <div className="dashboard">
-        <div className="dash-cell">
-          <div className="dash-label">connect</div>
+      <div className="cards-grid">
+        <div className="card"></div>
+        <div className="card connect-card">
+          <div className="card-title">
+            <FaRegCalendarAlt className="card-title-icon" />
+              Let's Connect
+          </div>
+
           <p className="connect-text">
-            Always open to interesting projects, collaborations, and conversations.
+            Always open to interesting projects,
+            collaborations, and conversations.
           </p>
-          <a className="btn-book" href="https://cal.com/quang-tran/30min?overlayCalendar=true" target="_blank" rel="noreferrer">
-            book a chat <span className="btn-arrow">→</span>
+
+          <a
+            className="connect-btn"
+            href="https://cal.com/quang-tran/30min?overlayCalendar=true"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Book a Chat
+            <FaArrowRight className="connect-arrow" />
           </a>
         </div>
         <LocationCard />
+        <div className="card"></div>
       </div>
     </div>
   );

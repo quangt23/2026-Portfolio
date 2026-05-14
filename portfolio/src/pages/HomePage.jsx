@@ -1,7 +1,7 @@
 import { PROJECTS } from "../data/projects";
 import LocationCard from "../components/LocationCard";
 import DashboardPanels from "../components/DashboardPanels";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaStar, FaStarHalf, FaStarOfLife } from "react-icons/fa";
 import coxLogo from "../assets/cox_logo.png";
 import schneiderLogo from "../assets/schneider_logo.png";
 
@@ -9,7 +9,7 @@ export default function HomePage({ setPage }) {
   return (
     <div className="page">
       <div className="home-intro fade-in">
-        <p className="eyebrow">open to work</p>
+        <p className="eyebrow">V.10</p>
         <h1 className="home-name">
           Hey! I'm <em>Quang Tran</em><br />
         </h1>
@@ -63,12 +63,14 @@ export default function HomePage({ setPage }) {
       </div>
 
       <div className="section-heading">
-        <h2>Featured Projects</h2>
+         <h2>
+          <FaStar className="section-icon" />
+          Featured Projects
+        </h2>
         <a href="#" onClick={e => { e.preventDefault(); setPage("projects"); }}>
           view all →
         </a>
       </div>
-
       <div className="proj-list">
         {PROJECTS.slice(0, 3).map(p => (
           <a
@@ -98,7 +100,7 @@ export default function HomePage({ setPage }) {
           <p className="connect-text">
             Always open to interesting projects, collaborations, and conversations.
           </p>
-          <a className="btn-book" href="https://cal.com" target="_blank" rel="noreferrer">
+          <a className="btn-book" href="https://cal.com/quang-tran/30min?overlayCalendar=true" target="_blank" rel="noreferrer">
             book a chat <span className="btn-arrow">→</span>
           </a>
         </div>

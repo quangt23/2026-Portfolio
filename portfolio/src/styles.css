@@ -81,7 +81,7 @@ nav {
 
 /* ── PAGE ── */
 .page {
-  max-width: 780px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 120px 2.5rem 120px;
 }
@@ -112,6 +112,7 @@ nav {
   align-items: center;
   gap: .5rem;
 }
+
 .eyebrow::before {
   content: '';
   display: inline-block;
@@ -136,10 +137,10 @@ nav {
 }
 
 .home-bio {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   color: var(--fg2);
-  max-width: 520px;
+  max-width: 700px;
   margin-bottom: 2.2rem;
   font-weight: 300;
 }
@@ -157,7 +158,6 @@ nav {
   display: flex;
   align-items: center;
   gap: 1.6rem;
-  margin-bottom: 2.8rem;
 }
 
 .social-link {
@@ -240,17 +240,20 @@ nav {
   align-items: baseline;
   justify-content: space-between;
   margin-bottom: 1.8rem;
-  margin-top: 3.5rem;
   padding-bottom: .8rem;
   border-bottom: 1px solid var(--line);
 }
+
 .section-heading h2 {
+  display: flex;
   font-family: var(--serif);
-  font-size: 1.15rem;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
   font-weight: 400;
   color: var(--fg);
-  letter-spacing: -.01em;
 }
+
 .section-heading a, .section-link {
   font-family: var(--mono);
   font-size: .7rem;
@@ -259,6 +262,13 @@ nav {
   transition: color .18s;
 }
 .section-heading a:hover, .section-link:hover { color: var(--green); }
+
+.section-icon {
+  font-size: 1rem;
+  color: var(--green);
+  position: relative;
+  top: -1px;
+}
 
 /* ── PROJECT LIST (home) ── */
 .proj-list { display: flex; flex-direction: column; }
@@ -279,7 +289,7 @@ nav {
 .proj-row:hover .proj-row-title { color: var(--green); }
 
 .proj-row-title {
-  font-size: .9rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: var(--fg);
   margin-bottom: .3rem;
@@ -758,7 +768,7 @@ nav {
 
 /* ── FOOTER ── */
 footer {
-  max-width: 720px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 2rem 2.5rem;
   border-top: 1px solid var(--line);
